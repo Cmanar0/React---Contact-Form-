@@ -84,51 +84,53 @@ class ContactForm1 extends React.Component {
   render() {
     return(
       <div> 
-        <div> 
+        <div class="container"> 
           <form onSubmit={this.onFormSubmit}>
 
-            <div className="mb-3">
-              <label className="form-label">Jméno</label>  
-              <input 
-                type="text" 
-                className="form-control"
-                value={this.state.jmeno}
-                onChange={e => this.setState({ jmeno: e.target.value})}
-              />
+            <div class="row">
+              <div className="mb-3" class="col-lg-6 col-sm-12">
+                <label className="form-label">Jméno</label>  
+                <input 
+                  type="text" 
+                  className="form-control"
+                  value={this.state.jmeno}
+                  onChange={e => this.setState({ jmeno: e.target.value})}
+                />
+              </div>
+              <div className="mb-3" class="col-lg-6 col-sm-12">
+                <label className="form-label">Příjmení</label>
+                <input 
+                  type="text" 
+                  className="form-control"
+                  value={this.state.prijmeni}
+                  onChange={e => this.setState({ prijmeni: e.target.value})}
+                />
+              </div>
             </div>
 
-            <div className="mb-3">
-              <label className="form-label">Příjmení</label>
-              <input 
-                type="text" 
-                className="form-control"
-                value={this.state.prijmeni}
-                onChange={e => this.setState({ prijmeni: e.target.value})}
-              />
-            </div>
+            <div class="row mb-4">
+              <div className="mb-3" class="col-lg-6 col-sm-12" >
+                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                <input 
+                  type="email" 
+                  className="form-control"
+                  value={this.state.email}
+                  onChange={e => this.setState({ email: e.target.value})}
+                  id="exampleInputEmail1" 
+                  aria-describedby="emailHelp" 
+                />
+              </div>
 
-            <div className="mb-3">
-              <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-              <input 
-                type="email" 
-                className="form-control"
-                value={this.state.email}
-                onChange={e => this.setState({ email: e.target.value})}
-                id="exampleInputEmail1" 
-                aria-describedby="emailHelp" 
-              />
+              <div className="mb-3" class="col-lg-6 col-sm-12" >
+                <label className="form-label">Datum narození</label>
+                <input 
+                  type="text" 
+                  className="form-control"
+                  value={this.state.datum}
+                  onChange={e => this.setState({ datum: e.target.value})}
+                />
+              </div>
             </div>
-
-            <div className="mb-3">
-              <label className="form-label">Datum narození</label>
-              <input 
-                type="text" 
-                className="form-control"
-                value={this.state.datum}
-                onChange={e => this.setState({ datum: e.target.value})}
-              />
-            </div>
-
             <div className="mb-3 form-check" class="pl-0 mb-4">
               <select 
                 class="form-select pt-2 pb-2" 
@@ -176,7 +178,7 @@ class ContactForm1 extends React.Component {
 
 
         </div>
-        <div> 
+        <div class="container"> 
           <form onSubmit={this.onFormUpload}>
             <textarea 
               className="form-control  mb-4"
